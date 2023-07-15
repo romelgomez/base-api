@@ -42,6 +42,6 @@ export class PublicationEntity extends BaseEntity {
   @DeleteDateColumn()
   deleteAt: Date;
 
-  @ManyToOne(() => UserEntity, (user) => user.publications)
+  @ManyToOne('UserEntity', (user: UserEntity) => user.publications)
   user: UserEntity;
 }

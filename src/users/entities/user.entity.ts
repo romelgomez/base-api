@@ -24,8 +24,12 @@ export class UserEntity extends BaseEntity {
   @Column({ default: true })
   isActive: boolean;
 
-  @OneToMany(() => PublicationEntity, (publication) => publication.user, {
-    cascade: true,
-  })
+  @OneToMany(
+    'PublicationEntity',
+    (publication: PublicationEntity) => publication.user,
+    {
+      cascade: true,
+    },
+  )
   publications: PublicationEntity[];
 }

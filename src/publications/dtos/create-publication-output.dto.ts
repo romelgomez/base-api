@@ -1,5 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { UserEntity } from '../../users';
+import { Relation } from 'typeorm';
 
 @ObjectType()
 export class PublicationOutput {
@@ -34,5 +35,5 @@ export class PublicationOutput {
   deleteAt?: Date;
 
   @Field(() => UserEntity)
-  user: UserEntity;
+  user: Relation<UserEntity>;
 }

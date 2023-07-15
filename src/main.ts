@@ -3,7 +3,6 @@ import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { AppConfigService } from './config';
 import helmet from 'helmet';
-import compression from 'compression';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,9 +16,6 @@ async function bootstrap() {
 
   // Use helmet for basic security
   app.use(helmet());
-
-  // Enable response compression
-  app.use(compression());
 
   // Use global validation pipe
   app.useGlobalPipes(
