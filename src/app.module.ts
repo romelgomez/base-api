@@ -9,9 +9,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 // TODO
 // https://www.apollographql.com/docs/apollo-server/api/plugin/landing-pages/
 
-// import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-// import { join } from 'path';
-
 @Module({
   imports: [
     ConfigModule,
