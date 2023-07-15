@@ -1,4 +1,4 @@
-import { Publication } from '../../publications';
+import { PublicationEntity } from '../../publications';
 import {
   Entity,
   Column,
@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity('user')
-export class User extends BaseEntity {
+export class UserEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -24,8 +24,8 @@ export class User extends BaseEntity {
   @Column({ default: true })
   isActive: boolean;
 
-  @OneToMany(() => Publication, (publication) => publication.user, {
+  @OneToMany(() => PublicationEntity, (publication) => publication.user, {
     cascade: true,
   })
-  publications: Publication[];
+  publications: PublicationEntity[];
 }

@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { User } from '../../users';
+import { UserEntity } from '../../users';
 
 @ObjectType()
 export class PublicationOutput {
@@ -33,6 +33,6 @@ export class PublicationOutput {
   @Field({ nullable: true })
   deleteAt?: Date;
 
-  @Field(() => User)
-  user: User;
+  @Field(() => UserEntity)
+  user: UserEntity;
 }
